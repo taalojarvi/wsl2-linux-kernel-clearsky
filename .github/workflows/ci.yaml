@@ -61,8 +61,8 @@ jobs:
           echo "MSKERNELVERS=${MSKERNELVERS}" >> $GITHUB_ENV
           echo Downloading ${MSKERNELVERS}
           curl -L https://github.com/microsoft/WSL2-Linux-Kernel/archive/refs/tags/linux-msft-wsl-${MSKERNELVERS}.tar.gz  -O
-          tar xfv *6.*.tar.gz
-          rm *6.*.tar.gz
+          tar -zxvf linux-msft-wsl-*.tar.gz
+          rm linux-msft-wsl-*.tar.gz
       - name: Get graysky2's patchfile
         run: |
           curl -L ${GRAYSKYPATCH} -O
